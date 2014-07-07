@@ -23,9 +23,9 @@ test:
 production:
   adapter: postgresql
   encoding: utf8
-  database: Rails.application.secrets.ninefold_db
-  username: Rails.application.secrets.ninefold_user
-  password: Rails.application.secrets.ninefold_pass
+  database: mina_db
+  username: mina
+  password: minatest
   host: localhost
   port: 5432
   pool: 10
