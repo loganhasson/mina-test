@@ -38,8 +38,6 @@ namespace :unicorn do
   desc "Restart unicorn"
   task :restart => :environment do
     queue "if kill -0 `cat #{deploy_to}/shared/pids/unicorn.pid`> /dev/null 2>&1; then kill -9 `cat #{deploy_to}/shared/pids/unicorn.pid`; else echo 'Unicorn is not running'; fi"
-    queue "cd #{app_path}"
-    queue! "ls config"
-    queue "unicorn -c config/unicorn.rb -D -E production"
+    queue "cd #{app_path} && unicorn -c config/unicorn.rb -D -E production"
   end
 end
