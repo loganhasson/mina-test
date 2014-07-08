@@ -14,10 +14,10 @@ end
 
 task :setup => :environment do
   queue! %[mkdir -p "#{deploy_to}/shared/log"]
-  queue! %[chmod g+rx,u+rwx,a+rw "#{deploy_to}/shared/log"]
+  queue! %[chmod g+rx,u+rwx "#{deploy_to}/shared/log"]
 
   queue! %[mkdir -p "#{deploy_to}/shared/pids"]
-  queue! %[chmod g+rx,u+rwx,a+rw "#{deploy_to}/shared/pids"]
+  queue! %[chmod g+rx,u+rwx "#{deploy_to}/shared/pids"]
 
   queue! %[mkdir -p "#{deploy_to}/shared/config"]
   queue! %[chmod g+rx,u+rwx "#{deploy_to}/shared/config"]
