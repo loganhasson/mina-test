@@ -8,7 +8,7 @@ set :app_path,     "#{deploy_to}/#{current_path}"
 set :repository,   "git@github.com:loganhasson/mina-test.git"
 set :branch,       "master"
 set :user,         "root"
-set :shared_paths, ["application.yml"]
+set :shared_paths, ["config/application.yml"]
 
 task :environment do
 end
