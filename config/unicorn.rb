@@ -1,4 +1,4 @@
-working_directory "/home/root/mina-test"
+working_directory "/home/root/mina-test/current"
 
 pid "/home/root/mina-test/pids/unicorn.pid"
 
