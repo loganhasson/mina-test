@@ -2,12 +2,13 @@ require 'mina/bundler'
 require 'mina/rails'
 require 'mina/git'
 
-set :domain,     '104.131.226.198'
-set :deploy_to,  '/home/root/mina-test'
-set :app_path,   "#{deploy_to}/#{current_path}"
-set :repository, 'git@github.com:loganhasson/mina-test.git'
-set :branch,     'master'
-set :user,       'root'
+set :domain,       "104.131.226.198"
+set :deploy_to,    "/home/root/mina-test"
+set :app_path,     "#{deploy_to}/#{current_path}"
+set :repository,   "git@github.com:loganhasson/mina-test.git"
+set :branch,       "master"
+set :user,         "root"
+set :shared_paths, ["application.yml"]
 
 task :environment do
 end
@@ -28,6 +29,7 @@ task :deploy => :environment do
   deploy do
     invoke :'git:clone'
     invoke :'bundle:install'
+    invoke :'deploy:link_shared_paths'
     invoke :'rails:db_migrate'
     invoke :'rails:assets_precompile'
 
